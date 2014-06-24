@@ -1,5 +1,10 @@
 require "refresh/version"
+require "refresh/daemon"
 
 module Refresh
-  # Your code goes here...
+  extend self
+
+  def server
+    Daemon.new(ARGV).run
+  end
 end
